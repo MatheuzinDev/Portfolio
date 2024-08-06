@@ -451,9 +451,10 @@ body {
     height: 4vh;
 }
 
-.menu-mobile {
+#menu-icon {
     opacity: 0;
 }
+
 
 
 @keyframes fadeInUp {
@@ -484,6 +485,14 @@ section {
 @media (max-width: 576px) {
     .section-1 {
         height: 50vh;
+    }
+
+    #home {
+        scroll-margin-top: 50vh;
+    }
+
+    #projects {
+        scroll-margin-top: 2vh;
     }
 
     .body-home {
@@ -552,10 +561,26 @@ section {
 
     #skills {
         height: 160vh;
+        margin-top: 10vh;
     }
 
     #skills h1 {
         font-size: 42px;
+    }
+
+    .individual-skill .rectangle1 {
+        margin-left: 10vw;
+        width: 60vw;
+    }
+
+    .individual-skill .rectangle2 {
+        margin-left: 10vw;
+        width: 60vw;
+    }
+
+    .individual-skill .rectangle3 {
+        margin-left: 10vw;
+        width: 60vw;
     }
 
     #skills p {
@@ -641,9 +666,17 @@ section {
         position: fixed;
         top: 0;
         right: 0;
-        z-index: 9999;
+        z-index: 99999;
         width: 70vw;
-        opacity: 1;
+        display: none;
+    }
+
+    .menu-mobile.abrir-menu ~ .overlay-menu {
+        display: block;
+    }
+
+    .menu-mobile.abrir-menu {
+        display: block;
     }
 
     .navList-mobile {
@@ -673,6 +706,31 @@ section {
     }
 
     .nav {
+        display: none;
+    }
+
+    .menu-icon {
+        width: 10vw;
+        height: 4vh;
+        margin-top: -50vh;
+        margin-left: 80vw;
+
+    }
+
+    #menu-icon {
+        width: 10vw;
+        left: 0;
+        opacity: 1;
+    }
+
+    .overlay-menu {
+        background-color: #000000a7;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 8999;
         display: none;
     }
 
