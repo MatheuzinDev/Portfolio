@@ -482,6 +482,10 @@ section {
     transition: all 2s;
 }
 
+.menu-mobile {
+    display: none;
+}
+
 @media (max-width: 576px) {
     .section-1 {
         height: 50vh;
