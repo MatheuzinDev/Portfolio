@@ -693,6 +693,10 @@ section {
         width: 24vw;
         margin-left: 30vw;
         text-align: right;
+        font-size: 18px;
+        font-family: 'DM Sans', sans-serif;
+        height: 5vh;
+        color: #666666;
     }
 
     .navList-mobile li {
@@ -700,13 +704,15 @@ section {
     }
 
     .navList-mobile li:hover {
-        text-decoration: underline #FFFFFF;
+        text-decoration: underline #666666;
     }
 
     .navList-mobile a {
         text-decoration: none;
-        color: #FFFFFF;
-        font-size: 24px;
+        font-size: 32px;
+        font-family: 'DM Sans', sans-serif;
+        height: 5vh;
+        color: #666666; 
     }
 
     #close-icon {
@@ -959,13 +965,15 @@ section {
     }
 
     .navList-mobile li:hover {
-        text-decoration: underline #FFFFFF;
+        text-decoration: underline #666666;
     }
 
     .navList-mobile a {
         text-decoration: none;
-        color: #FFFFFF;
-        font-size: 24px;
+        font-size: 32px;
+        font-family: 'DM Sans', sans-serif;
+        height: 5vh;
+        color: #666666; 
     }
 
     #close-icon {
@@ -1217,13 +1225,15 @@ section {
     }
 
     .navList-mobile li:hover {
-        text-decoration: underline #FFFFFF;
+        text-decoration: underline #666666;
     }
 
     .navList-mobile a {
         text-decoration: none;
-        color: #FFFFFF;
-        font-size: 24px;
+        font-size: 32px;
+        font-family: 'DM Sans', sans-serif;
+        height: 5vh;
+        color: #666666; 
     }
 
     #close-icon {
