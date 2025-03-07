@@ -326,6 +326,10 @@ body {
     scroll-margin-top: 10vh;
 }
 
+#projectModal {
+    display: none;
+}
+
 .section-4 {
     height: 90vh;
     width: 100vw;
