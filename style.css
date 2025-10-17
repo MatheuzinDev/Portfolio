@@ -164,9 +164,10 @@ body {
 
 /* Seção 2 - Sobre */
 .section-2 {
-    height: 90vh;
+    min-height: 90vh;
     width: 100vw;
     margin-top: 10vh;
+    padding: 5vh 0;
 }
 
 .body-section-2,
@@ -177,9 +178,11 @@ body {
 }
 
 .body-section-2 {
-    height: 40vh;
+    height: auto;
+    min-height: 40vh;
     width: 50vw;
     justify-content: center;
+    margin-bottom: 5vh;
 }
 
 .body-section-2 h1,
@@ -199,7 +202,8 @@ body {
 }
 
 .body-tecnologias {
-    height: 40vh;
+    height: auto;
+    min-height: 40vh;
     width: 80vw;
     margin-top: 4vh;
 }
@@ -208,23 +212,28 @@ body {
     margin-top: 6vh;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2vw;
 }
 
 .tecnologias img {
     width: 5vw;
+    min-width: 40px;
+    max-width: 80px;
 }
 
-/* Seção 3 - Skills */
+/* Seção 3 - Skills CORRIGIDA */
 .section-3 {
-    height: 95vh;
+    min-height: 100vh;
     width: 100vw;
     margin-top: 5vh;
+    padding: 5vh 0;
 }
 
 .body-section-3 {
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    min-height: 95vh;
     width: 80vw;
     margin-left: 10vw;
     justify-content: center;
@@ -236,6 +245,7 @@ body {
     background: linear-gradient(45deg, #13B0F5, #E70FAA);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 3vh;
 }
 
 .body-section-3 p {
@@ -243,6 +253,8 @@ body {
     font-weight: normal;
     color: #42446E;
     margin-top: 2vh;
+    margin-bottom: 5vh;
+    line-height: 1.6;
 }
 
 .body-section-3 h2 {
@@ -259,70 +271,109 @@ body {
     color: #42446E;
     margin-top: 2vh;
     font-size: 14px;
+    line-height: 1.5;
 }
 
+/* Skills Layout Corrigido */
 .body-skills {
     width: 80vw;
-    height: 20vh;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    margin-top: 5vh;
 }
 
 .body-skills .individual-skill {
-    width: 25vw;
-    height: 40vh;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.body-skills .individual-skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .individual-skill .rectangle1,
 .individual-skill .rectangle2,
 .individual-skill .rectangle3 {
-    width: 15vw;
+    width: 100%;
     height: 4vh;
     margin-top: 1vh;
-    margin-left: 2vw;
+    margin-left: 0;
 }
 
 .individual-skill .rectangle1 {
-    background-color: #bbb8b4;
+    background: linear-gradient(90deg, #bbb8b4, #d1cfcc);
 }
 
 .individual-skill .rectangle2 {
-    background-color: #dddcda;
+    background: linear-gradient(90deg, #dddcda, #f0efee);
 }
 
 .individual-skill .rectangle3 {
-    background-color: #eeedec;
+    background: linear-gradient(90deg, #eeedec, #fafafa);
 }
 
 .individual-skill .top-individual-skill {
     display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Seção 4 - Projetos */
+.individual-skill .top-individual-skill h1 {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(45deg, #13B0F5, #E70FAA);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 15px;
+}
+
+.bottom-individual-skill {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-individual-skill h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Seção Projetos - Modernizada */
 .section-4 {
-    height: 90vh;
+    min-height: 100vh;
     width: 100vw;
-    margin-top: 10vh;
+    margin-top: 5vh;
+    padding: 5vh 0;
 }
 
 .body-section-4 {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    min-height: 90vh;
     width: 80vw;
     margin-left: 10vw;
     justify-content: center;
 }
 
 .body-section-4 h1 {
-    font-size: 38px;
+    font-size: 42px;
     font-family: "Poppins", sans-serif;
     background: linear-gradient(45deg, #13B0F5, #E70FAA);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 2vh;
 }
 
 .body-section-4 p {
@@ -330,178 +381,160 @@ body {
     font-weight: normal;
     color: #42446E;
     margin-top: 2vh;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
+/* Container dos cards modernizado */
 .body-cards {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
     margin-top: 8vh;
+    padding: 20px 0;
 }
 
+/* Card Modernizado */
 .card {
-    width: 25vw;
-    height: 40vh;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    height: 250px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #13B0F5, #E70FAA);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.card h1 {
-    font-size: 24px;
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Conteúdo do card */
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-title {
+    font-size: 20px;
     font-family: "Poppins", sans-serif;
     background: linear-gradient(45deg, #13B0F5, #E70FAA);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-left: 1vw;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.card p {
+.card-description {
     font-family: "Poppins", sans-serif;
     font-weight: normal;
-    color: #42446E;
-    margin-left: 1vw;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
-.card img {
-    border-radius: 10px;
-    height: auto;
-    width: auto;
-}
-
-.card-button-eye,
-.card-button-github {
-    height: 6vh;
-    width: 7vw;
-    border: none;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-button-github:hover {
-    background-color: #4538cf;
-    transform: scale(1.1);
-}
-
-.card-button-eye:hover {
-    background-color: #179b48;
-    transform: scale(1.1);
-}
-
-#eye_img,
-#github_img {
-    width: 2vw;
-    height: 4vh;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: rgb(207, 207, 207);
-    width: 80vw;
-    height: 60vh;
-    padding: 20px;
-    display: flex;
-    border-radius: 10px;
-    position: relative;
-    font-family: "Montserrat", sans-serif;
-}
-
-.modal-body {
-    display: flex;
-}
-
-.modal-image {
-    width: 40vw;
-    height: 60vh;
-    border-radius: 10px;
-}
-
-.modal-text {
-    width: 50%;
-    padding-left: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.modal-buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-}
-
-#modalTechList {
-    list-style: none;
-    padding: 0;
+/* Tecnologias do card */
+.card-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
-#modalTechList li {
-    padding: 10px 15px;
-    border-radius: 30px;
-    font-size: 16px;
+.tech-tag {
+    background: rgba(19, 176, 245, 0.1);
+    color: #13B0F5;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    color: white;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(19, 176, 245, 0.2);
+}
+
+/* Botões do card */
+.card-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.card-button {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-transform: capitalize;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-#modalTechList li:hover {
-    transform: scale(1.1);
+.card-button.eye {
+    background: linear-gradient(45deg, #13B0F5, #00C0FD);
+    color: white;
 }
 
-#modalTechList li.html { background-color: #e34f26; }
-#modalTechList li.css { background-color: #1572b6; }
-#modalTechList li.javascript { background-color: #f0db4f; }
-#modalTechList li.react { background-color: #61dbfb; }
-#modalTechList li.sql { background-color: #3e7e9f; }
-#modalTechList li.nodejs { background-color: #68a063; }
-#modalTechList li.mongodb { background-color: #47a248; }
-#modalTechList li.bootstrap { background-color: #563d7c; }
-#modalTechList li.prisma { background-color: #2D3748; }
-#modalTechList li.express { background-color: #000000; }
+.card-button.github {
+    background: #333;
+    color: white;
+}
+
+.card-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-button.eye:hover {
+    background: linear-gradient(45deg, #0fa0e0, #00a8e8);
+}
+
+.card-button.github:hover {
+    background: #555;
+}
+
+.card-button img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
 
 /* Animações */
 section {
@@ -520,10 +553,21 @@ section {
 }
 
 /* Scroll margins */
-#home { scroll-margin-top: 30vh; }
-#about { scroll-margin-top: 10vh; }
-#skills { scroll-margin-top: 5vh; }
-#projects { scroll-margin-top: 10vh; }
+#home {
+    scroll-margin-top: 30vh;
+}
+
+#about {
+    scroll-margin-top: 10vh;
+}
+
+#skills {
+    scroll-margin-top: 5vh;
+}
+
+#projects {
+    scroll-margin-top: 10vh;
+}
 
 /* Menu Mobile Moderno - Design Atualizado */
 .menu-mobile {
@@ -545,7 +589,7 @@ section {
     transform: translateX(0);
 }
 
-.menu-mobile.abrir-menu ~ .overlay-menu {
+.menu-mobile.abrir-menu~.overlay-menu {
     display: block;
 }
 
@@ -568,7 +612,7 @@ section {
 }
 
 .nav-mobile {
-    height: 70%;
+    height: 75%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -593,10 +637,21 @@ section {
     transform: translateY(0);
 }
 
-.menu-mobile.abrir-menu .navList-mobile li:nth-child(1) { transition-delay: 0.1s; }
-.menu-mobile.abrir-menu .navList-mobile li:nth-child(2) { transition-delay: 0.2s; }
-.menu-mobile.abrir-menu .navList-mobile li:nth-child(3) { transition-delay: 0.3s; }
-.menu-mobile.abrir-menu .navList-mobile li:nth-child(4) { transition-delay: 0.4s; }
+.menu-mobile.abrir-menu .navList-mobile li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.menu-mobile.abrir-menu .navList-mobile li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.menu-mobile.abrir-menu .navList-mobile li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.menu-mobile.abrir-menu .navList-mobile li:nth-child(4) {
+    transition-delay: 0.4s;
+}
 
 .navList-mobile a {
     text-decoration: none;
@@ -725,8 +780,34 @@ section {
     filter: brightness(0) invert(1);
 }
 
-#projectModal {
-    display: none;
+/* Efeito de stagger para os cards */
+.body-cards .card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.body-cards .card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.body-cards .card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.body-cards .card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.body-cards .card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* RESPONSIVIDADE CORRIGIDA */
@@ -736,11 +817,11 @@ section {
     .nav {
         display: none !important;
     }
-    
+
     .menu-icon {
         display: flex;
     }
-    
+
     .section-1 {
         height: auto;
         min-height: 100vh;
@@ -750,8 +831,13 @@ section {
         padding: 20vh 0 5vh 0;
     }
 
-    #home { scroll-margin-top: 10vh; }
-    #projects { scroll-margin-top: 2vh; }
+    #home {
+        scroll-margin-top: 10vh;
+    }
+
+    #projects {
+        scroll-margin-top: 2vh;
+    }
 
     .body-home {
         display: flex;
@@ -783,8 +869,13 @@ section {
         order: 1;
     }
 
-    .section-2 { height: 100vh; }
-    .body-section-2 { width: 80vw; }
+    .section-2 {
+        height: auto;
+    }
+
+    .body-section-2 {
+        width: 80vw;
+    }
 
     .body-section-2 h1,
     .body-tecnologias h1,
@@ -800,66 +891,83 @@ section {
         margin-top: 1vh;
     }
 
-    .body-tecnologias { margin-top: 10vh; }
-    .body-tecnologias img { width: 8vw; }
+    .body-tecnologias {
+        margin-top: 10vh;
+    }
 
+    .body-tecnologias img {
+        width: 12vw;
+    }
+
+    /* Skills Layout Mobile */
     .body-section-3 {
         width: 80vw;
-        height: 140vh;
+        height: auto;
+        min-height: auto;
     }
 
     #skills {
-        height: 160vh;
-        margin-top: 10vh;
+        height: auto;
+        min-height: auto;
+        margin-top: 5vh;
+    }
+
+    .body-skills {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 5vh;
+    }
+
+    .body-skills .individual-skill {
+        min-height: 250px;
+        padding: 25px;
     }
 
     .individual-skill .rectangle1,
     .individual-skill .rectangle2,
     .individual-skill .rectangle3 {
-        margin-left: 10vw;
-        width: 60vw;
+        width: 100%;
+        height: 25px;
     }
 
-    .body-skills {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-        width: 80vw;
-        justify-content: space-between;
+    .section-4 {
+        height: auto;
     }
 
-    .individual-skill {
-        width: 80vw;
-        height: 30vh;
+    .body-section-4 {
+        height: auto;
     }
 
-    .body-section-3 h1 { font-size: 32px; }
-    .body-section-3 p { font-size: 18px; }
-
-    .section-4 { height: 250vh; }
-    .body-section-4 { height: 240vh; }
+    /* Responsividade dos Cards */
+    .body-section-4 h1 {
+        font-size: 36px;
+    }
 
     .body-cards {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 240vh;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .card {
-        width: 80vw;
-        height: 60vh;
+        height: 280px;
+        margin: 0 10px;
+        padding: 20px;
     }
 
-    .card img { width: 80vw; }
-    .card button { width: 25vw; }
+    .card-content {
+        padding: 0;
+    }
 
-    #eye_img,
-    #github_img {
-        width: 6vw;
-        height: 4vh;
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .menu-icon {
@@ -868,13 +976,13 @@ section {
         top: 3vh;
         right: 5vw;
     }
-    
+
     #menu-icon {
         width: 20px;
         height: 20px;
         opacity: 1 !important;
     }
-    
+
     .menu-mobile {
         width: 280px;
     }
@@ -885,15 +993,15 @@ section {
     .nav {
         display: flex;
     }
-    
+
     .menu-icon {
         display: none;
     }
-    
+
     .menu-mobile {
         display: none;
     }
-    
+
     .overlay-menu {
         display: none;
     }
@@ -907,8 +1015,13 @@ section {
         padding: 15vh 0 5vh 0;
     }
 
-    #home { scroll-margin-top: 10vh; }
-    #projects { scroll-margin-top: 2vh; }
+    #home {
+        scroll-margin-top: 10vh;
+    }
+
+    #projects {
+        scroll-margin-top: 2vh;
+    }
 
     .body-home {
         display: flex;
@@ -942,8 +1055,13 @@ section {
         margin-top: 10vh;
     }
 
-    .section-2 { height: 100vh; }
-    .body-section-2 { width: 80vw; }
+    .section-2 {
+        height: auto;
+    }
+
+    .body-section-2 {
+        width: 80vw;
+    }
 
     .body-section-2 h1,
     .body-tecnologias h1,
@@ -959,66 +1077,55 @@ section {
         margin-top: 1vh;
     }
 
-    .body-tecnologias { margin-top: 10vh; }
-    .body-tecnologias img { width: 8vw; }
-
-    .body-section-3 {
-        width: 80vw;
-        height: 140vh;
-    }
-
-    #skills {
-        height: 160vh;
+    .body-tecnologias {
         margin-top: 10vh;
     }
 
-    .individual-skill .rectangle1,
-    .individual-skill .rectangle2,
-    .individual-skill .rectangle3 {
-        margin-left: 10vw;
-        width: 60vw;
+    .body-tecnologias img {
+        width: 10vw;
+    }
+
+    /* Skills Layout Tablet */
+    .body-section-3 {
+        width: 80vw;
+        height: auto;
+        min-height: auto;
+    }
+
+    #skills {
+        height: auto;
+        min-height: auto;
+        margin-top: 5vh;
     }
 
     .body-skills {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-        width: 80vw;
-        justify-content: space-between;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 5vh;
     }
 
-    .individual-skill {
-        width: 80vw;
-        height: 30vh;
+    .body-skills .individual-skill {
+        min-height: 250px;
+        padding: 25px;
     }
 
-    .body-section-3 h1 { font-size: 32px; }
-    .body-section-3 p { font-size: 18px; }
+    .section-4 {
+        height: auto;
+    }
 
-    .section-4 { height: 250vh; }
-    .body-section-4 { height: 240vh; }
+    .body-section-4 {
+        height: auto;
+    }
 
+    /* Responsividade dos Cards para Tablet */
     .body-cards {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 240vh;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
     }
 
     .card {
-        width: 80vw;
-        height: 60vh;
-    }
-
-    .card img { width: 80vw; }
-    .card button { width: 25vw; }
-
-    #eye_img,
-    #github_img {
-        width: 6vw;
-        height: 4vh;
+        height: 320px;
+        padding: 25px;
     }
 }
 
@@ -1027,16 +1134,78 @@ section {
     .nav {
         display: flex;
     }
-    
+
     .menu-icon {
         display: none;
     }
-    
+
     .menu-mobile {
         display: none;
     }
-    
+
     .overlay-menu {
         display: none;
+    }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+    .body-section-4 {
+        width: 90vw;
+        margin-left: 5vw;
+    }
+
+    .body-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        height: 300px;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .card-content {
+        padding: 0;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-description {
+        font-size: 13px;
+    }
+
+    .card-button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .body-section-4 h1 {
+        font-size: 32px;
+    }
+
+    .body-section-4 p {
+        font-size: 14px;
+    }
+
+    /* Skills Mobile Small */
+    .body-skills .individual-skill {
+        min-height: 220px;
+        padding: 20px;
+    }
+
+    .individual-skill .top-individual-skill h1 {
+        font-size: 20px;
+    }
+
+    .bottom-individual-skill h2 {
+        font-size: 18px;
+    }
+
+    .bottom-individual-skill p {
+        font-size: 13px;
     }
 }

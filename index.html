@@ -19,8 +19,10 @@
             </ul>
 
             <div class="list-icons">
-                <a href="https://github.com/MatheuzinDev"><img class="icon-github" src="assents/icon-github.png" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/matheus-di%C3%B3genes/"><img class="icon-linkedin" src="assents/icon-linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/MatheuzinDev"><img class="icon-github" src="assents/icon-github.png"
+                        alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/matheus-di%C3%B3genes/"><img class="icon-linkedin"
+                        src="assents/icon-linkedin.png" alt="LinkedIn"></a>
             </div>
         </div>
 
@@ -137,27 +139,6 @@
 
     <hr id="hr-section-3" class="hr">
 
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <div class="modal-body">
-                <img id="modalImage" src="" alt="Projeto" class="modal-image">
-                <div class="modal-text">
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalDescription"></p>
-                    <h3>Tecnologias utilizadas:</h3>
-                    <ul id="modalTechList"></ul>
-                    <div class="modal-buttons">
-                        <button class="card-button-eye" id="deployBtn">Deploy <img id="eye_img"
-                                src="assents/icon-eye.png" alt="Visualizar"></button>
-                        <button class="card-button-github" id="githubBtn">GitHub <img id="github_img"
-                                src="assents/icon-github.png" alt="GitHub"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <section class="section-4" id="projects">
         <div class="body-section-4">
             <h1>Projetos</h1>
@@ -165,7 +146,55 @@
                 acessar minha página no GitHub e explorar meus projetos.</p>
             <div class="body-cards">
                 <div class="card">
-                    <img id="imgCard" src="assents/cloudtasks-logo.png" alt="CloudTasks Project">
+                    <div class="card-content">
+                        <div>
+                            <h3 class="card-title">CloudTasks</h3>
+                            <p class="card-description">Sistema de gerenciamento de tarefas com autenticação.</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">NodeJS</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">ORM Prisma</span>
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="#" class="card-button eye">
+                                <img src="assents/icon-eye.png" alt="Visualizar">
+                                Deploy
+                            </a>
+                            <a href="https://github.com/MatheuzinDev" class="card-button github">
+                                <img src="assents/icon-github.png" alt="GitHub">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div>
+                            <h3 class="card-title">Agendamentos LIP</h3>
+                            <p class="card-description">Sistema de gerenciamento de agendamentos para o Laboratório de Inovação e Prototipagem (LIP).</p>
+                            <div class="card-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">NodeJS</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">ORM Prisma</span>
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="card-button eye" disabled style="opacity: 0.6;">
+                                <img src="assents/icon-eye.png" alt="Visualizar">
+                                Deploy
+                            </button>
+                            <button class="card-button github" disabled style="opacity: 0.6;">
+                                <img src="assents/icon-github.png" alt="GitHub">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

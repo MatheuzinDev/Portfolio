@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     li.classList.add("sql");
                     break;
                 case "node.js":
+                case "nodejs":
                     li.classList.add("nodejs");
                     break;
                 case "mongodb":
@@ -100,6 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     break;
                 case "express":
                     li.classList.add("express");
+                    break;
+                case "typescript":
+                    li.classList.add("typescript");
                     break;
                 default:
                     li.classList.add("default");
@@ -137,17 +141,93 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Adicionar evento de clique aos cards
+    // Eventos para os cards modernos
     document.querySelectorAll(".card").forEach(card => {
-        card.addEventListener("click", function () {
-            openModal(
-                "CloudTasks",
-                "O CloudTasks é uma aplicação web para gerenciamento de tarefas, permitindo criar, editar, concluir e excluir atividades. Com autenticação segura e organização separada entre tarefas pendentes e concluídas, oferece uma experiência intuitiva e eficiente.",
-                "assents/cloudtasks.png",
-                ["HTML", "CSS", "JavaScript", "React", "Node.js", "SQL", "Bootstrap", "Prisma", "Express"],
-                "https://cloud-tasks-three.vercel.app/", 
-                "https://github.com/MatheuzinDev/cloudtasks"
-            );
+        card.addEventListener("click", function (e) {
+            // Prevenir que o modal abra se clicar nos botões
+            if (e.target.closest('.card-button') || e.target.closest('.view-project-btn')) {
+                return;
+            }
+            
+            const cardTitle = this.querySelector('.card-title').textContent;
+            
+            if (cardTitle === "CloudTasks") {
+                openModal(
+                    "CloudTasks",
+                    "O CloudTasks é uma aplicação web moderna para gerenciamento de tarefas, desenvolvida com as melhores práticas do mercado. Oferece autenticação segura, organização inteligente entre tarefas pendentes e concluídas, e uma interface intuitiva que proporciona uma excelente experiência do usuário. O sistema permite criar, editar, concluir e excluir atividades de forma eficiente.",
+                    "assents/cloudtasks.png",
+                    ["React", "Node.js", "MongoDB", "TypeScript", "Express", "JWT", "CSS3", "HTML5"],
+                    "https://cloud-tasks-three.vercel.app/", 
+                    "https://github.com/MatheuzinDev/cloudtasks"
+                );
+            } else if (cardTitle === "Novo Projeto") {
+                openModal(
+                    "Novo Projeto",
+                    "Estou trabalhando em um novo projeto empolgante! Em breve trarei mais detalhes sobre as tecnologias utilizadas e funcionalidades implementadas. Fique atento às atualizações!",
+                    "assents/cloudtasks-logo.png",
+                    ["React", "Next.js", "PostgreSQL", "TypeScript"],
+                    "#", 
+                    "#"
+                );
+            }
+        });
+    });
+
+    // Eventos para os botões dos cards
+    document.querySelectorAll('.card-button.eye').forEach(btn => {
+        if (!btn.disabled && !btn.textContent.includes('Em Breve')) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = this.closest('.card');
+                const cardTitle = card.querySelector('.card-title').textContent;
+                
+                if (cardTitle === "CloudTasks") {
+                    window.open("https://cloud-tasks-three.vercel.app/", "_blank");
+                }
+            });
+        }
+    });
+
+    document.querySelectorAll('.card-button.github').forEach(btn => {
+        if (!btn.disabled && !btn.textContent.includes('Em Breve')) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = this.closest('.card');
+                const cardTitle = card.querySelector('.card-title').textContent;
+                
+                if (cardTitle === "CloudTasks") {
+                    window.open("https://github.com/MatheuzinDev/cloudtasks", "_blank");
+                }
+            });
+        }
+    });
+
+    // Eventos para os botões "Ver Projeto" no overlay
+    document.querySelectorAll('.view-project-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = this.closest('.card');
+            const cardTitle = card.querySelector('.card-title').textContent;
+            
+            if (cardTitle === "CloudTasks") {
+                openModal(
+                    "CloudTasks",
+                    "O CloudTasks é uma aplicação web moderna para gerenciamento de tarefas, desenvolvida com as melhores práticas do mercado. Oferece autenticação segura, organização inteligente entre tarefas pendentes e concluídas, e uma interface intuitiva que proporciona uma excelente experiência do usuário. O sistema permite criar, editar, concluir e excluir atividades de forma eficiente.",
+                    "assents/cloudtasks.png",
+                    ["React", "Node.js", "MongoDB", "TypeScript", "Express", "JWT", "CSS3", "HTML5"],
+                    "https://cloud-tasks-three.vercel.app/", 
+                    "https://github.com/MatheuzinDev/cloudtasks"
+                );
+            } else if (cardTitle === "Novo Projeto") {
+                openModal(
+                    "Novo Projeto",
+                    "Estou trabalhando em um novo projeto empolgante! Em breve trarei mais detalhes sobre as tecnologias utilizadas e funcionalidades implementadas. Fique atento às atualizações!",
+                    "assents/cloudtasks-logo.png",
+                    ["React", "Next.js", "PostgreSQL", "TypeScript"],
+                    "#", 
+                    "#"
+                );
+            }
         });
     });
 });
@@ -245,3 +325,27 @@ if ('IntersectionObserver' in window) {
         imageObserver.observe(img);
     });
 }
+
+// Adicionar animação de digitação para o título
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+// Iniciar animação de digitação quando a página carregar
+window.addEventListener('load', function() {
+    const title = document.querySelector('.body-home h1');
+    if (title) {
+        const originalText = title.textContent;
+        typeWriter(title, originalText, 120);
+    }
+});
